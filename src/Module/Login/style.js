@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import color from "../../themes/color";
-
+import { getFontFamily } from '../../utils/fontFamily';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -26,13 +26,18 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         fontSize: 24,
         marginBottom: 8,
+         fontFamily: 'Montserrat',
+        // fontFamily: getFontFamily(true),
         color:color.heading,
     },
     text2: {
         color: color.text,
         fontWeight: '400',
         fontSize: 15,
+        fontFamily: getFontFamily(true),
         marginBottom: 20,
+
+
         color:'#4F5F72'
     },
     forgot: {

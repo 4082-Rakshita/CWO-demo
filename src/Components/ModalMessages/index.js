@@ -16,10 +16,7 @@ export default class CustomModal extends React.Component {
                     visible={this.props.visibility}
                     animationType="fade"
                     onRequestClose={this.props.onClose}>
-
-
                     <View style={styles.overlay} />
-
                     <View style={styles.modalContent}>
                         <View style={styles.imageContainer}>
                             <Image style={styles.lockStyle} source={this.props.image} />
@@ -38,8 +35,9 @@ export default class CustomModal extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    color:{backgroundColor:'#F6F7F7',color:color.black,
-        
+    color:{
+        backgroundColor:'#F6F7F7',
+        color:color.black,   
     },
     overlay: {
         flex: 1,

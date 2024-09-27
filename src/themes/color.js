@@ -30,4 +30,11 @@ export default {
     back  :'#fff',
     errorBanner:'#FFCDD2',
     lightgrey:'#F6F7F7',
+    greyish:'#F6F6F6',
+    blacktext:'#0B152D',
+    profile:'#E1EBFE',
+   pink:"#EE28A9",
+   profilepic:'#4B5879',
+darkBlue:'#000080',
+outlinedborder:'#7F879A'
 }

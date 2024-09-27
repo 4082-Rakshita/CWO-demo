@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 10,
     backgroundColor: color.white,
-    borderWidth: 1, 
+   
     width:'100%'
   },
   icon: {

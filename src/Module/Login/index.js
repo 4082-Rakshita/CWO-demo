@@ -12,7 +12,7 @@ import Toast from 'react-native-toast-message';
 import color from '../../themes/color';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-
+import { getFontFamily } from '../../utils/fontFamily';
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -169,6 +169,9 @@ class Login extends React.Component {
                 onPress={this.handleLogin}
                 disabled={!isButtonEnabled}
               />
+              {/* <Text style={{fontFamily: getFontFamily(true, "bold"),color:'black'}}>
+               My text in the right font family - Montserrat Medium! 
+              </Text> */}
               <CustomModal
                 Heading={string.AccountLocked}
                 visibility={isModalVisible}
@@ -181,7 +184,6 @@ class Login extends React.Component {
           
             </View>
             <ToastComponent />
-          
         </KeyboardAwareScrollView>
       </ImageBackground>
     );

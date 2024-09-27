@@ -1,3 +1,5 @@
+import { openCamera } from 'react-native-image-crop-picker';
+
 const Images = {
     splash_img: require('./images/image.png'),
     headBackground:require('./images/head.png'),
@@ -41,6 +43,11 @@ const Images = {
    multipleAttempt:require('./icons/multipleattempt.png'),
     accountverified:require('./icons/accountverified.png'),
     exit:require('./icons/exit.png'),
+    profile:require('./icons/profile.png'),
+    calendericon:require('./icons/calendericon.png'),
+    onCamera:require('./icons/onCamera.png'),
+    onGallery:require('./icons/ongallery.png'),
+    forward:require('./icons/forward.png')
   };
   
   export { Icons,Images};
