@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
-import string from '../../string'; // Ensure you have the required strings
+import string from '../../string';
 import CustomInput from '../../Components/InputField';
 import { Icons } from '../../assets';
 import color from '../../themes/color';
@@ -99,17 +99,16 @@ const AccountScreen = ({ navigation }) => {
     }
 
     if (!phoneNumber.trim()) {
-      newErrors.phoneNumber = string.phoneNumberNeeded; // Ensure this string is defined
+      newErrors.phoneNumber = string.phoneNumberNeeded;
       isValid = false;
     }
 
     if (!selectedStartDate) {
-      newErrors.date = string.dateNeeded; // Ensure this string is defined
-      isValid = false;
+      newErrors.date = string.dateNeeded;
     }
 
     if (!gender) {
-      newErrors.gender = string.genderNeeded; // Ensure this string is defined
+      newErrors.gender = string.genderNeeded;
       isValid = false;
     }
 
@@ -169,6 +168,7 @@ const AccountScreen = ({ navigation }) => {
   const selectGender = (selectedGender) => {
     setGender(selectedGender);
     setGenderModalVisible(false);
+
   };
 
   return (
@@ -200,10 +200,14 @@ const AccountScreen = ({ navigation }) => {
             value={name}
             error={errors.name}
             showError={!!errors.name}
+            borderColor={color.outlinedborder}
+
+            activeOutline={color.outlinedborder}
             onChangeText={text => {
               setName(text);
               setErrors(prev => ({ ...prev, name: '' }));
             }}
+
           />
 
           <CustomInput
@@ -212,6 +216,8 @@ const AccountScreen = ({ navigation }) => {
             value={username}
             error={errors.username}
             showError={!!errors.username}
+            borderColor={color.outlinedborder}
+            activeOutline={color.outlinedborder}
             onChangeText={text => {
               setUsername(text);
               setErrors(prev => ({ ...prev, username: '' }));
@@ -226,13 +232,15 @@ const AccountScreen = ({ navigation }) => {
                 value={selectedStartDate ? selectedStartDate.toLocaleDateString() : ''}
                 editable={false}
                 error={errors.date}
-                showError={!!errors.date}
+                borderColor={color.outlinedborder}
+                activeOutline={color.outlinedborder}
+                showError={errors.date}
               />
             </View>
+
             <TouchableOpacity onPress={openCalendar} style={styles.calenderOpen}>
               <Image source={Icons.calendericon} style={styles.calendericon} />
             </TouchableOpacity>
-           
           </View>
 
           <TouchableOpacity onPress={openGenderModal} style={styles.genderInput}>
@@ -242,10 +250,11 @@ const AccountScreen = ({ navigation }) => {
               value={gender}
               editable={false}
               error={errors.gender}
+              borderColor={color.outlinedborder}
+              activeOutline={color.outlinedborder}
               showError={!!errors.gender}
             />
           </TouchableOpacity>
-       
 
           <View style={styles.phoneInputContainer}>
             <TouchableOpacity style={styles.countryPickerContainer} onPress={togglePicker}>
@@ -259,31 +268,44 @@ const AccountScreen = ({ navigation }) => {
             </TouchableOpacity>
 
             <View style={{ width: vw(233), marginLeft: 5 }}>
-              <CustomInput
-                mode='outlined'
-                placeholder="Phone Number"
-                value={phoneNumber}
-                onChangeText={validation}
-                keyboardType="numeric"
-                error={errors.phoneNumber}
-                showError={!!errors.phoneNumber}
-              />
-             
+              <View style={{ position: 'relative' }}>
+                <CustomInput
+                  mode='outlined'
+                  placeholder="Phone Number"
+                  value={phoneNumber}
+                  onChangeText={validation}
+                  keyboardType="numeric"
+                  error={errors.phoneNumber}
+                  showError={!!errors.phoneNumber}
+                  borderColor={color.outlinedborder}
+                  activeOutline={color.outlinedborder}
+                />
+              </View>
+              <TouchableOpacity style={styles.change}>
+                <Text style={styles.verifyText}>{string.Change}</Text>
+              </TouchableOpacity>
             </View>
           </View>
-
-          <CustomInput
-            mode='outlined'
-            placeholder='Email'
-            value={email}
-            error={errors.email}
-            showError={!!errors.email}
-            onChangeText={text => {
-              setEmail(text);
-              setErrors(prev => ({ ...prev, email: '' }));
-            }}
-          />
-
+          <View>
+            <View>
+              <CustomInput
+                mode='outlined'
+                placeholder='Email'
+                value={email}
+                error={errors.email}
+                showError={!!errors.email}
+                borderColor={color.outlinedborder}
+                activeOutline={color.outlinedborder}
+                onChangeText={text => {
+                  setEmail(text);
+                  setErrors(prev => ({ ...prev, email: '' }));
+                }}
+              />
+            </View>
+            <TouchableOpacity style={styles.verify}>
+              <Text style={styles.verifyText}>{string.Verify}</Text>
+            </TouchableOpacity>
+          </View>
           <CustomButton title={string.Update} style={styles.button} onPress={handlePhone} />
         </View>
 
@@ -296,7 +318,7 @@ const AccountScreen = ({ navigation }) => {
           />
         )}
 
-         <CameraSourceModal
+        <CameraSourceModal
           visible={cameraModalVisible}
           onSelect={handleImagePick}
           onClose={() => setCameraModalVisible(false)}
@@ -308,12 +330,11 @@ const AccountScreen = ({ navigation }) => {
           forward={Icons.forward}
         />
 
-
         <CameraSourceModal
           visible={genderModalVisible}
           onSelect={selectGender}
           onClose={() => setGenderModalVisible(false)}
-          title={string.selectGender}
+          title={string.selectgender}
           text1={string.male}
           text2={string.female}
           text3={string.other}
@@ -324,3 +345,6 @@ const AccountScreen = ({ navigation }) => {
 };
 
 export default AccountScreen;
+
+
+

@@ -6,6 +6,22 @@ const styles = StyleSheet.create({
       backgroundColor: color.white,
       padding: 30,
     },
+    verify:{position:'absolute',
+      paddingLeft:vw(270),
+      paddingTop:vh(23),
+    },
+    change:{position:'absolute',
+      paddingLeft:vw(170),
+      paddingTop:vh(23),
+    },
+
+    verifyText:{
+      color:color.pink,
+      fontWeight: '500',
+      fontSize: 16,
+      fontFamily:'Circular Std',
+
+    },
     main: {
       flexDirection: 'row',
       justifyContent: "space-between",
@@ -21,8 +37,8 @@ const styles = StyleSheet.create({
       color: color.blacktext,
     },
     ImageContainer: {
-      paddingVertical: 15,
-      paddingHorizontal: 15,
+      paddingVertical: 17,
+      paddingHorizontal: 17,
       backgroundColor: color.greyish,
       alignItems: 'center',
       borderRadius: 15,
@@ -78,7 +94,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       borderColor: color.outlinedborder,
-      borderWidth: 2,
+      borderWidth: 1,
       borderRadius: 18,
       paddingLeft:10,
       paddingRight:10,
@@ -99,8 +115,9 @@ const styles = StyleSheet.create({
     },
     calenderOpen: {
       position: 'absolute',
-      right: 0,
-      paddingRight: 10,
+    
+      paddingLeft:vw(290),
+     
       paddingTop: 25,
     },
     modalContainer: {

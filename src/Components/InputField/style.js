@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
     height: 52,
     paddingHorizontal: 0,
+  
   },
   placeholder: {
     position: 'absolute',

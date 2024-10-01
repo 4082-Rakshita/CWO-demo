@@ -74,4 +74,7 @@ export default {
     profilepic: "Profile Picture",
     changeprofile: "Change Profile Picture",
     Update: "Update",
+    selectgender:'Select Gender',
+    Change:'Change',
+    Verify:'Verify'
 }
